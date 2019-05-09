@@ -1,2 +1,2 @@
 
-* [inline formatting context에 대한 이해 (lineheight, vertical-align) - blog](https://wit.nts-corp.com/2017/09/25/4903)
+* [inline formatting context에 대한 이해 (lineheight, vertical-align) - wit ](https://wit.nts-corp.com/2017/09/25/4903)
