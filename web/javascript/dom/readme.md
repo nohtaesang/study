@@ -13,3 +13,14 @@
   ```
   NodeList.prototype.isPrototypeOf(nodes)
   ```
+
+
+## DOM API
+1. classList
+    1. add()
+        * element의 class 속성에 값을 추가한다.
+        * 이미 존재할 경우 추가하지 않는다.
+1. after() 
+    * element와 같은 레벨로 element 다음에 오도록 한다.
+    * 값 복사가 아닌 참조로 실제 값을 이동시킨다.
+    
