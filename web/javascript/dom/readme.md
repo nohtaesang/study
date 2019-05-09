@@ -32,4 +32,5 @@ textContext를 사용하자
 1. after() 
     * element와 같은 레벨로 element 다음에 오도록 한다.
     * 값 복사가 아닌 참조로 실제 값을 이동시킨다.
+1. append()
     
