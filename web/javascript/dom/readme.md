@@ -13,6 +13,12 @@
   ```
   NodeList.prototype.isPrototypeOf(nodes)
   ```
+* [element인지 확인하기]
+  ```
+  el.nodeType 이 undfined가 아니면, element이다.
+  ```
+* [textContext, innerText, innerHTML 성능 비교 - blog](https://equal-blog.tistory.com/entry/innerHTML-innerText-textContent-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EB%B3%84-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90)
+  * textContext를 사용하자
 
 
 ## DOM API
