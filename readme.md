@@ -27,35 +27,92 @@
 * [Markdown](#markdown)
 * [Edu](#edu)
 
+
+
+
+
 # Computer Science
+
+
+
+
 
 ## algorithm
 
+
+
+
+
 ## computer architecture
+
+
+
+
 
 ## datastructure
 
+
+
+
+
 ## network
 
+
+
+
+
 ## os
+
+
+
+
 
 # Web
 * [웹 프로그래밍 튜토리얼 - poiemaweb](https://poiemaweb.com/)
 
+
+
+
+
 ## browser
 * [브라우저는 어떻게 동작하는가 - D2](https://d2.naver.com/helloworld/59361)
 
+
+
+
+
 ## html
+
+
+
+
 
 ## css
 * [inline formatting context에 대한 이해 (lineheight, vertical-align) - wit ](https://wit.nts-corp.com/2017/09/25/4903)
 * [flex 참고하기 가장 좋은 사이트](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
+
+
+
+
 ## sass
+
+
+
+
+
 
 ## javascript
 
+
+
+
+
 ## es6
+
+
+
+
 
 ## dom
 * [DOM에 대한 간략한 정리 - wit 블로그](https://wit.nts-corp.com/2019/02/14/5522)
@@ -75,27 +132,47 @@ return wrapper.firstChild;
 ```
 NodeList.prototype.isPrototypeOf(nodes)
 ```
+* classList.add(className)      
+    * element의 class 속성에 값을 추가한다.
+    * 이미 존재할 경우 추가하지 않는다.
 
-* API
-   * classList
-        * add()
-            * element의 class 속성에 값을 추가한다.
-            * 이미 존재할 경우 추가하지 않는다.
-    * after() 
-        * element와 같은 레벨로 element 다음에 오도록 한다.
-        * 값 복사가 아닌 참조로 실제 값을 이동시킨다.
-    
+* after(content) 
+    * element와 같은 레벨로 element 다음에 오도록 한다.
+    * 값 복사가 아닌 참조로 실제 값을 이동시킨다.
+
+* [append((Node or DOMString)[, ...nodes]) vs appendChild(node)](https://rpubs.com/raulUbiqum/append)
+    * appendChild는 Node를 인자로 넣어야 한다. (string일 경우 error 발생)
+    * append는 Node, string 모두 인자로 넣을 수 있다.
+
 
 ## webpack
 * [JavaScript 모듈화 도구 webpack - D2](https://d2.naver.com/helloworld/0239818)
 * [webpack, bable 적용 따라하기 - poiemaweb](https://poiemaweb.com/es6-babel-webpack-1)
 
+
+
+
+
+
+
 ## babel
+
+
+
+
+
+
 
 ## reactjs
 * [성능 최적화 - 문서](https://reactjs-kr.firebaseapp.com/docs/optimizing-performance.html)
 * [성능 최적화 21가지 방법 - 블로그](https://www.codementor.io/blog/react-optimization-5wiwjnf9hj)
 * [크롬으로 성능 확인하기 - medium](https://building.calibreapp.com/debugging-react-performance-with-react-16-and-chrome-devtools-c90698a522ad)
+
+
+
+
+
+
 
 ## nextjs
 * [커스텀 라우팅을 위한 방법 - 공식 문서](https://nextjs.org/docs/#custom-app)
@@ -108,16 +185,68 @@ NodeList.prototype.isPrototypeOf(nodes)
   * https://next-router-issue-wjnmzzmmft.now.sh/ 배포된 곳에서 테스트하면 문제가 생기지 않지만
   * https://github.com/malimccalla/next-routing-issue 로컬로 받아와서 테스트하면 1~2분 뒤 문제가 발생함
 
+
+
+
+
+
+
+
+
 ## redux
+
+
+
+
+
+
+
+
+
+
+
 
 ## styled-component
 * [바벨 설정하기 - 문서](https://www.styled-components.com/docs/tooling#babel-plugin)
 
+
+
+
+
+
+
+
+
+
 ## react-native
+
+
+
+
+
+
+
+
+
 
 ## nodejs
 
+
+
+
+
+
+
+
 # github
+
+
+
+
+
+
+
+
 
 # markdown
 * [내부 링크 - blog](https://a1010100z.tistory.com/entry/Markdown-%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EB%82%B4%EB%B6%80-%EB%A7%81%ED%81%AC-%EC%9D%B4%EB%8F%99)
@@ -125,6 +254,16 @@ NodeList.prototype.isPrototypeOf(nodes)
 [Title](#taesang)
 # taesang
 ```
+
+
+
+
+
+
+
+
+
+
 
 # edu
 * [전반적인 코딩 관련 학습 자료. 요약이 잘 되어있음 - tcpschool ](http://tcpschool.com/)
