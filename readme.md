@@ -119,6 +119,11 @@ NodeList.prototype.isPrototypeOf(nodes)
 # github
 
 # markdown
+* [내부 링크 - blog](https://a1010100z.tistory.com/entry/Markdown-%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EB%AC%B8%EC%84%9C-%EB%82%B4%EB%B6%80-%EB%A7%81%ED%81%AC-%EC%9D%B4%EB%8F%99)
+```
+[Title](#taesang)
+# taesang
+```
 
 # edu
 * [전반적인 코딩 관련 학습 자료. 요약이 잘 되어있음 - tcpschool ](http://tcpschool.com/)
