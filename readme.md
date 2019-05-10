@@ -28,48 +28,61 @@
 * [Edu](#edu)
 
 # Computer Science
+
 ## algorithm
+
 ## computer architecture
+
 ## datastructure
+
 ## network
+
 ## os
+
 # Web
 * [웹 프로그래밍 튜토리얼 - poiemaweb](https://poiemaweb.com/)
+
 ## browser
 * [브라우저는 어떻게 동작하는가 - D2](https://d2.naver.com/helloworld/59361)
 
 ## html
+
 ## css
 * [inline formatting context에 대한 이해 (lineheight, vertical-align) - wit ](https://wit.nts-corp.com/2017/09/25/4903)
+
 ## sass
+
 ## javascript
+
 ## es6
+
 ## dom
 * [DOM에 대한 간략한 정리 - wit 블로그](https://wit.nts-corp.com/2019/02/14/5522)
 * [새 창으로 링크 열기 - blog](https://rocabilly.tistory.com/84)
-  * window.open()
+```
+window.open()
+```
 * [html 태그로 이루어진 문자열을 DOM element로 바꾸기 - stackoverflow](https://stackoverflow.com/a/3104251)
-  ```
-  const convertStringToElement = (str) => {
-   const wrapper = document.createElement('div');
-   wrapper.innerHTML = str;
-   return wrapper.firstChild;
-  };
-  ```
+```
+const convertStringToElement = (str) => {
+const wrapper = document.createElement('div');
+wrapper.innerHTML = str;
+return wrapper.firstChild;
+};
+```
 * [NodeList 객체인지 확인하기 - stackoverflow](https://stackoverflow.com/a/36857902)
-  ```
-  NodeList.prototype.isPrototypeOf(nodes)
-  ```
+```
+NodeList.prototype.isPrototypeOf(nodes)
+```
 
-
-## DOM API
-* classList
-    * add()
-        * element의 class 속성에 값을 추가한다.
-        * 이미 존재할 경우 추가하지 않는다.
-* after() 
-    * element와 같은 레벨로 element 다음에 오도록 한다.
-    * 값 복사가 아닌 참조로 실제 값을 이동시킨다.
+* API
+   * classList
+        * add()
+            * element의 class 속성에 값을 추가한다.
+            * 이미 존재할 경우 추가하지 않는다.
+    * after() 
+        * element와 같은 레벨로 element 다음에 오도록 한다.
+        * 값 복사가 아닌 참조로 실제 값을 이동시킨다.
     
 
 ## webpack
@@ -77,6 +90,7 @@
 * [webpack, bable 적용 따라하기 - poiemaweb](https://poiemaweb.com/es6-babel-webpack-1)
 
 ## babel
+
 ## reactjs
 * [성능 최적화 - 문서](https://reactjs-kr.firebaseapp.com/docs/optimizing-performance.html)
 * [성능 최적화 21가지 방법 - 블로그](https://www.codementor.io/blog/react-optimization-5wiwjnf9hj)
@@ -94,12 +108,17 @@
   * https://github.com/malimccalla/next-routing-issue 로컬로 받아와서 테스트하면 1~2분 뒤 문제가 발생함
 
 ## redux
+
 ## styled-component
 * [바벨 설정하기 - 문서](https://www.styled-components.com/docs/tooling#babel-plugin)
 
 ## react-native
+
 ## nodejs
+
 # github
+
 # markdown
+
 # edu
 * [전반적인 코딩 관련 학습 자료. 요약이 잘 되어있음 - tcpschool ](http://tcpschool.com/)
