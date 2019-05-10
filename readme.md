@@ -3,29 +3,29 @@
 # Table of content
 * [Computer Science](#computer-science)
     * [algorithm](#algorithm)
-    * [computer architecture]
-    * [datastructure]
-    * [network]
-    * [os]
-* [Web]
-    * [browser]
-    * [html]
-    * [css]
-        * [sass]
-    * [javascript]
-        * [es6]
-        * [dom]
-        * [webpack]
-        * [babel]
-        * [react.js]
-            * [next.js]
-            * [redux]
-            * [styled-component]
-        * [react-native]
-        * [node.js]
-* [Github]
-* [Markdown]
-* [Edu]
+    * [computer architecture](#computer-architecture)
+    * [datastructure](#datastructure)
+    * [network](#network)
+    * [os](#os)
+* [Web](#web)
+    * [browser](#browser)
+    * [html](#html)
+    * [css](#css)
+        * [sass](#sass)
+    * [javascript](#javascript)
+        * [es6](#es6)
+        * [dom](#dom)
+        * [webpack](#webpack)
+        * [babel](#babel)
+        * [reactjs](#reactjs)
+            * [nextjs](#nextjs)
+            * [redux](#redux)
+            * [styled-component](#styled-component)
+        * [react-native](#react-native)
+        * [nodejs](#nodejs)
+* [Github](#github)
+* [Markdown](#markdown)
+* [Edu](#edu)
 
 # Computer Science
 ## algorithm
@@ -33,7 +33,25 @@
 ## datastructure
 ## network
 ## os
-# 
+# Web
+## browser
+## html
+## css
+### sass
+## javascript
+### es6
+### dom
+### webpack
+### babel
+### reactjs
+#### nextjs
+#### redux
+#### styled-component
+#### react-native
+#### nodejs
+## github
+## markdown
+## edu
     
 
 
