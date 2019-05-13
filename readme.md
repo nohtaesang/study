@@ -26,6 +26,7 @@
 * [Github](#github)
 * [Markdown](#markdown)
 * [Edu](#edu)
+* [Util](#util)
 
 
 
@@ -92,8 +93,13 @@
 * [flex 참고하기 가장 좋은 사이트](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [user-select - 사용자로부터 컨텐츠 선택을 제어하는 방법 - blog](https://webisfree.com/2018-10-31/css-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%84%A0%ED%83%9D-%EB%93%9C%EB%9E%98%EA%B7%B8-%EC%84%A4%EC%A0%95-user-select-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0)
 * [transform:scale(0.5) - img 태그 비율 조절하기](https://codeday.me/ko/qa/20190310/34589.html)
-
-
+* background로 이미지를 가져왔을 때는 background-size:로 사이즈를 조절할 수 있다.
+```
+background: url('https://static.bitnaru.com/v3_web/images/icon_next.png') 0 0 no-repeat;
+background-size: 15px;
+```
+* [before, after를 이용하여 쉽게 부가적인 컨텐츠를 추가할 수 있다 - TODO]
+* i tag의 색상과 크기는 font-size, color로 설정할 수 있다.
 
 
 
@@ -170,6 +176,7 @@ NodeList.prototype.isPrototypeOf(nodes)
 * [성능 최적화 21가지 방법 - 블로그](https://www.codementor.io/blog/react-optimization-5wiwjnf9hj)
 * [크롬으로 성능 확인하기 - medium](https://building.calibreapp.com/debugging-react-performance-with-react-16-and-chrome-devtools-c90698a522ad)
 * [react-device-detect - react에서 사용자가 모바일인지 확인하는 라이브러리 ](https://github.com/duskload/react-device-detect#readme)
+* [css 속성을 변경하여 image slider 구현하기 ](https://nohtaesang.tistory.com/17)
 
 
 
@@ -270,3 +277,7 @@ NodeList.prototype.isPrototypeOf(nodes)
 
 # edu
 * [전반적인 코딩 관련 학습 자료. 요약이 잘 되어있음 - tcpschool ](http://tcpschool.com/)
+
+
+# util
+* [xe icon](https://xpressengine.github.io/XEIcon/library-2.3.3.html)
