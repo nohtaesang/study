@@ -177,7 +177,7 @@ NodeList.prototype.isPrototypeOf(nodes)
 * [크롬으로 성능 확인하기 - medium](https://building.calibreapp.com/debugging-react-performance-with-react-16-and-chrome-devtools-c90698a522ad)
 * [react-device-detect - react에서 사용자가 모바일인지 확인하는 라이브러리 ](https://github.com/duskload/react-device-detect#readme)
 * [css 속성을 변경하여 image slider 구현하기 ](https://nohtaesang.tistory.com/17)
-
+* [렌더링 시 스크롤 중앙으로 위치시키기](https://nohtaesang.tistory.com/18)
 
 
 
@@ -218,6 +218,12 @@ NodeList.prototype.isPrototypeOf(nodes)
 
 ## styled-component
 * [바벨 설정하기 - 문서](https://www.styled-components.com/docs/tooling#babel-plugin)
+* [media query 사용하기]
+```
+@media (max-width: 1024px) {
+	width: 100%;
+}
+```
 
 
 
