@@ -92,7 +92,7 @@
 * [inline formatting context에 대한 이해 (lineheight, vertical-align) - wit ](https://wit.nts-corp.com/2017/09/25/4903)
 * [flex 참고하기 가장 좋은 사이트](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [user-select - 사용자로부터 컨텐츠 선택을 제어하는 방법 - blog](https://webisfree.com/2018-10-31/css-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%84%A0%ED%83%9D-%EB%93%9C%EB%9E%98%EA%B7%B8-%EC%84%A4%EC%A0%95-user-select-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0)
-* [transform:scale(0.5) - img 태그 비율 조절하기](https://codeday.me/ko/qa/20190310/34589.html)
+* [transform:scale(0.5) - <img> 태그 비율 조절하기](https://codeday.me/ko/qa/20190310/34589.html)
 * background로 이미지를 가져왔을 때는 background-size:로 사이즈를 조절할 수 있다.
 ```
 background: url('https://static.bitnaru.com/v3_web/images/icon_next.png') 0 0 no-repeat;
@@ -141,17 +141,40 @@ return wrapper.firstChild;
 NodeList.prototype.isPrototypeOf(nodes)
 ```
 * classList.add(className)      
-    * element의 class 속성에 값을 추가한다.
-    * 이미 존재할 경우 추가하지 않는다.
-
-* after(content) 
-    * element와 같은 레벨로 element 다음에 오도록 한다.
-    * 값 복사가 아닌 참조로 실제 값을 이동시킨다.
+```
+element의 class 속성에 값을 추가한다.
+이미 존재할 경우 추가하지 않는다.
+```
+* after(content)
+```
+element와 같은 레벨로 element 다음에 오도록 한다.
+값 복사가 아닌 참조로 실제 값을 이동시킨다.
+```
+* before(content)
+```
+element와 같은 레벨로 element 이전에 오도록 한다.
+값 복사가 아닌 참조로 실제 값을 이동시킨다.
+```
 
 * [append((Node or DOMString)[, ...nodes]) vs appendChild(node)](https://rpubs.com/raulUbiqum/append)
-    * appendChild는 Node를 인자로 넣어야 한다. (string일 경우 error 발생)
-    * append는 Node, string 모두 인자로 넣을 수 있다.
+```
+appendChild는 Node를 인자로 넣어야 한다. (string일 경우 error 발생)
+append는 Node, string 모두 인자로 넣을 수 있다.
+```
+* [attribute 와 property의 차이](https://medium.com/hexlant/attribute-%EC%99%80-property-%EC%9D%98-%EC%B0%A8%EC%9D%B4-c6f1c91ba91)
+```
+attribute는 
+- html document 안에서 존재한다.
+- 정적으로 변하지 않는다.
+ex) 
+<div id='taesang' style='height:200px'><div>
+1. document.getElementById('taesang').getAttribute('height') // null
+2. document.getElementById('taesang').getAttribute('style') // height:200px
 
+property는
+- html DOM tree 안에서 존재한다.
+- 동적으로 값이 변할 수 있다.
+```
 
 ## webpack
 * [JavaScript 모듈화 도구 webpack - D2](https://d2.naver.com/helloworld/0239818)
@@ -190,11 +213,12 @@ NodeList.prototype.isPrototypeOf(nodes)
 * [커스텀 라우팅을 위한 방법 - 블로그](http://webframeworks.kr/tutorials/nextjs/nextjs-004/)
 * [router.push()로 페이지 이동시 스크롤 최상단으로 이동시키기 - stackoverflow](https://github.com/zeit/next.js/issues/3249)
 * [Link 가 작동하지 않는 문제](https://github.com/zeit/next.js/issues/5598)
-  * [HMR] bundle rebuilding 이 출력되면서 페이지 이동이 일어나지 않음
-  * 결론부터 말하면, 로컬에서만 발생하는 문제
-  * https://next-router-issue-wjnmzzmmft.now.sh/ 배포된 곳에서 테스트하면 문제가 생기지 않지만
-  * https://github.com/malimccalla/next-routing-issue 로컬로 받아와서 테스트하면 1~2분 뒤 문제가 발생함
-
+```
+[HMR] bundle rebuilding 이 출력되면서 페이지 이동이 일어나지 않음
+결론부터 말하면, 로컬에서만 발생하는 문제
+https://next-router-issue-wjnmzzmmft.now.sh/ 배포된 곳에서 테스트하면 문제가 생기지 않지만
+https://github.com/malimccalla/next-routing-issue 로컬로 받아와서 테스트하면 1~2분 뒤 문제가 발생함
+```
 
 
 
@@ -286,4 +310,4 @@ NodeList.prototype.isPrototypeOf(nodes)
 
 
 # util
-* [xe icon](https://xpressengine.github.io/XEIcon/library-2.3.3.html)
+* [hmtl 아이콘 - xe icon](https://xpressengine.github.io/XEIcon/library-2.3.3.html)
