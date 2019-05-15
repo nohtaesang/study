@@ -106,7 +106,17 @@ transition: all 0.5s, z-index 0s;
 z-index도 trasition에 영향을 받는다.
 이것 때문에 뷰에서 문제가 생긴다.
 ```
-
+### [css로 삼각형 만들기](http://uxuiz.cafe24.com/wp/archives/4619)
+```
+.triangle {
+    width: 0px;
+    height: 0px;
+    border-top: 5px solid none;
+    border-bottom: 5px solid #4385a7;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+```
 
 
 
@@ -197,11 +207,65 @@ computed style은
 window.getComputedStyle(node, propertyName)
 으로 가져올 수 있다.
 ```
+### [How to set CSS values in Javascript]()
+```
+attribute 
+node.style.setProperty(propertyName, value)
+node.style[propertyName] = valeu
+
+property
+CSSStyleDeclaration 는 read-only여서 수정할 수가 없다.
+```
 
 ###  [transition 완료 감지하기](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions#%ED%8A%B8%EB%9E%9C%EC%A7%80%EC%85%98_%EC%99%84%EB%A3%8C_%EA%B0%90%EC%A7%80%ED%95%98%EA%B8%B0)
 ```
 element.addEventListener('transitioned', ...)
 ```
+
+### [.cloneNode()]
+```
+node.cloneNode(true) // 깊은 복사
+```
+
+### .parentNode
+```
+node.parentNode // node의 부모 노드를 반환한다.
+```
+
+### [.removeChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
+```
+node.removeChild(child) // node의 자식중 child를 삭제한다
+return 값은 삭제된 노드이다.
+
+모든 자식을 지우는 방법
+let element = document.getElementById("top");
+while (element.firstChild) {
+  element.removeChild(element.firstChild);
+}
+```
+### [.classList](https://developer.mozilla.org/ko/docs/Web/API/Element/classList)
+```
+add(string)
+
+remove(string)
+
+item
+```
+
+### 단위(ex. 100px)를 pre(100), post(px) 로 나누기
+```
+const getStylePreAndPostFix = (prop) => {
+	let pre = prop;
+	let post = '';
+	if (typeof pre === 'string') {
+		pre = parseFloat(prop);
+		const length = (pre + '').length;
+		post = prop.substr(length, prop.length);
+	}
+	return { pre, post };
+};
+```
+
 
 ## webpack
 ###  [JavaScript 모듈화 도구 webpack - D2](https://d2.naver.com/helloworld/0239818)
