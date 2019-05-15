@@ -110,6 +110,7 @@ z-index도 trasition에 영향을 받는다.
 
 
 
+
 ## sass
 
 
@@ -182,6 +183,21 @@ property는
 - html DOM tree 안에서 존재한다.
 - 동적으로 값이 변할 수 있다.
 ```
+### [How to get CSS values in Javascript - inline styles과 computed style의 차이](https://zellwk.com/blog/css-values-in-js/)
+```
+inline style은 결국 attribute
+property는 computed style
+
+inline style은
+node.style.propertyName
+node.getAttribute(propertyName)
+으로 가져올 수 있다.
+
+computed style은
+window.getComputedStyle(node, propertyName)
+으로 가져올 수 있다.
+```
+
 ###  [transition 완료 감지하기](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions#%ED%8A%B8%EB%9E%9C%EC%A7%80%EC%85%98_%EC%99%84%EB%A3%8C_%EA%B0%90%EC%A7%80%ED%95%98%EA%B8%B0)
 ```
 element.addEventListener('transitioned', ...)
