@@ -159,7 +159,11 @@ const newObj = {...obj, c:4} // newObj: a:1, b:2, c:4
 
 const temp = {b:1, c:1}
 const newObj2 = {...obj, ...temp} // newObj2: a:1, b:1, c:1
+```
 
+###[new Date(date) 에서 date가 문자열이면 안된다.]()
+```
+new Date('1558421237881') // Invalid Date
 ```
 
 
@@ -375,8 +379,43 @@ NODE_PATH=src/
 ```
 블로그에 업로드
 ```
+### [map과 setTimout을 함께 쓰면 생기는 문제]()
+```
+map으로 queue에 있는 항목을 렌더링하고 싶다.
+각 항목들은 일정 시간이 지나면 사라진다.
+queue에 삽입되는 순간 map에서 항목을 그리고,
+항목은 setTimeout에 의해 실행된다.
+여기서 일정 시간이 지나 어떤 항목이 사라지게 된다.
+여기서 queue는 수정이 된다.
+이때 발생하는 문제는 map이 전체 queue를 다시 rendering하게 된다.
+따라서 setTimeout은 또 걸리게 된다.
 
 
+export const renderAlertBox = (queue, spliceAlertBox) => {
+	return <AlertBox>{queue.map((alert, i) => renderAlert(alert, i, spliceAlertBox, 5000))}</AlertBox>;
+};
+
+
+const renderAlert = (obj, index, spliceAlertBox, sec) => {
+	const dequeue = () => {
+		spliceAlertBox(obj);
+	};
+
+	const timer = setTimeout(dequeue, sec);
+
+	const onClickClose = () => {};
+
+	return (
+		<Alert key={index}>
+			<i className="xi-bell-o" />
+			<div>{obj.msg}</div>
+			<div>{obj.state}</div>
+			<i className="xi-close-min" onClick={onClickClose} />
+		</Alert>
+	);
+};
+
+```
 
 ## nextjs
 ###  [커스텀 라우팅을 위한 방법 - 공식 문서](https://nextjs.org/docs/#custom-app)
@@ -480,8 +519,25 @@ channel은 push동작을 pull 동작으로 바꾸는 것을 일반화 한 방법
 	width: 100%;
 }
 ```
+### [animation 사용하기](https://medium.com/@shlee1353/%EB%A6%AC%EC%95%A1%ED%8A%B8-styled-components-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-%EA%B5%AC%ED%98%84-fbbb8aa9e722)
+```
+const Box = styled.div`
+	position: absolute;
+	transition: 1s;
+	transition-delay: 0.5s;
+	width: 200px;
+	animation: boxMove 1s ease-out;
 
-
+	@keyframes boxMove {
+		0% {
+			right: -200px;
+		}
+		100% {
+			right: 0px;
+		}
+	}
+`;
+```
 
 
 
