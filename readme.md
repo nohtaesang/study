@@ -153,6 +153,12 @@ transform-origin: top;
 
 문제는 자식의 크기도 함께 축소된다는 것이다.
 ```
+###[ 스크롤 영향 안받기 - overflow:overay ]()
+```
+scroll의 영향을 안받도록 설정한다.
+(scroll 까지 width로 계산함)
+```
+
 
 
 ## sass
@@ -163,6 +169,28 @@ transform-origin: top;
 
 
 ## javascript
+### [두 배열을 비교하여 추가된 것, 삭제된 것, 변하지 않은것 찾기]
+```javascript
+const compareBase = (markets, copyMarkets) => {
+	let added = [],
+		deleted = [],
+		unChanged = [];
+
+	const before = markets.reduce((acc, market) => acc.concat(market.base), []);
+	const after = copyMarkets.reduce((acc, market) => acc.concat(market.base), []);
+	before.map((b, i) => {
+		const idx = after.findIndex((a) => a === b);
+		if (idx !== -1) {
+			unChanged.push(after.splice(idx, 1)[0]);
+		} else {
+			deleted.push(b);
+		}
+	});
+	added = after.slice();
+	console.log(added, deleted, unChanged);
+};
+```
+
 ### [object에 특정 속성만 교체하고 싶을 때]
 ```javascript
 const obj ={a:1, b:2, c:3}
@@ -533,6 +561,7 @@ channel은 push동작을 pull 동작으로 바꾸는 것을 일반화 한 방법
 ```
 ### [react redux-saga example app ](https://medium.com/@lavitr01051977/make-your-first-call-to-api-using-redux-saga-15aa995df5b6)
 
+### [yield all() - promise.all() 처럼 동시에 수행하기](https://github.com/redux-saga/redux-saga/blob/master/docs/advanced/RunningTasksInParallel.md)
 
 
 
@@ -702,3 +731,11 @@ key: prCode, value: token 인 객체 만들기
 {Object.values(tokenList).map((token, i) => <Item key={i} type="tokenList" token={token} />)}
 ```
 
+
+### pagination 구현
+```
+```
+### time traverse 구현
+```javascript
+log 만들기
+```
