@@ -112,6 +112,23 @@ document.designMode = "on";
 
 
 ## css
+### [text-overflow 시 ellipse 나오게 하기 ](https://webdir.tistory.com/483)
+```css
+.notice-title {
+	display: inline-block;
+	max-width: 300px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+```
+### [ css를 이용하여 hover 시 다른 element에 css 적용하기](https://codepen.io/mvaneijgen/pen/oEhgk)
+```css
+&:hover .item-token-name {
+	font-weight: bold;
+}
+hover이벤트가 일어나면 .item-token-name이 bold 처리된다.
+```
 ### [inline formatting context에 대한 이해 (lineheight, vertical-align) - wit ](https://wit.nts-corp.com/2017/09/25/4903)
 ### [flex 참고하기 가장 좋은 사이트](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 ###  [user-select - 사용자로부터 컨텐츠 선택을 제어하는 방법 - blog](https://webisfree.com/2018-10-31/css-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%84%A0%ED%83%9D-%EB%93%9C%EB%9E%98%EA%B7%B8-%EC%84%A4%EC%A0%95-user-select-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0)
@@ -372,6 +389,15 @@ const getStylePreAndPostFix = (prop) => {
 
 
 ## reactjs
+### [데이터 변화에 따라 렌더링할 떄 깜빡이는 현상(데이터 간의 조작 시간차이) 없애기]
+```
+A라는 데이터를 이용하여 B라는 데이터를 만든다고 하자.
+A와 B를 모두 렌더링하고 있다면, A가 렌더링 되고 난 후 B가 렌더링 될 것이다.
+이럴 경우, 깜빡이는 현상, 혹은 시간 차 렌더링이 될 수 있다.
+그럴 경우 A라는 데이터를 이용하여 B를 만들면서 A와 똑같은 C를 동시에 만들어 C와 B를
+마치 A와 B처럼 렌더링하면 문제는 해결된다.
+
+```
 ###  [성능 최적화 - 문서](https://reactjs-kr.firebaseapp.com/docs/optimizing-performance.html)
 ###  [성능 최적화 21가지 방법 - 블로그](https://www.codementor.io/blog/react-optimization-5wiwjnf9hj)
 ###  [크롬으로 성능 확인하기 - medium](https://building.calibreapp.com/debugging-react-performance-with-react-16-and-chrome-devtools-c90698a522ad)
@@ -512,6 +538,7 @@ export default rootReducer;
 
 
 ## redux-saga
+### [왜 redux-saga인가 - 한글 정리 깔끔](https://gracefullight.dev/2017/12/06/Why-redux-saga/)
 ### [redux-saga 사이드 이펙트 관리](https://meetup.toast.com/posts/136)
 ```javascript
 사이드 이펙트는, 코드가 외부 세계에 영향을 주거나 받는 것이다.
