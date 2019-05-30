@@ -30,7 +30,8 @@
 * [Edu](#edu)
 * [Util](#util)
 * [개발 방법론](#개발 방법론)
-
+* [Server](#server)
+	* [nginx](#nginx)
 
 
 
@@ -112,6 +113,26 @@ document.designMode = "on";
 
 
 ## css
+### [transition과 animation의 차이](https://ahribori.com/article/5a0c49926c9eef13d882e3ea)
+```
+animation이 할 수 있는게 더 많다.
+시작, 정지, 반복 까지 제어 가능
+```
+### [onTransitionEnd - transtion이 끝남을 감지하는 이벤트](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/transitionend_event)
+```
+const transition = document.querySelector('.transition');
+
+transition.addEventListener('transitionend', () => {
+  console.log('Transition ended');
+});
+```
+### [direction:rtl 과 ltr 로 문자 정렬하기](http://www.homejjang.com/07/text_direction.php)
+```html
+<p style="direction: ltr">direction 속성값을 ltr로 지정한 문단</p>
+<p style="direction: rtl">direction 속성값을 rtl로 지정한 문단</p>
+ltr은 left to right(왼쪽에 붙음)
+rtl은 right to left(오른쪽에 붙음)
+```
 ### [text-overflow 시 ellipse 나오게 하기 ](https://webdir.tistory.com/483)
 ```css
 .notice-title {
@@ -389,6 +410,20 @@ const getStylePreAndPostFix = (prop) => {
 
 
 ## reactjs
+### [s3 로 이미지 업로드하기](https://ideveloper2.tistory.com/117)
+### [절대경로로 수정하기](https://engineering.huiseoul.com/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%83%81%EB%8C%80%EA%B2%BD%EB%A1%9C-%EC%A0%88%EB%8C%80%EA%B2%BD%EB%A1%9C-%EB%B3%80%EA%B2%BD-1485babb5198)
+### [절대 경로 수정 후 jsconfig.json 으로 vscode에서 경로잡기](https://itnext.io/create-react-app-with-vs-code-1913321b48d)
+
+### [map을 사용하여 Object를 렌더링하기]()
+```javascript
+{Object.values(toastExcuteQueue).map((value, i) => (
+	const {type, msg, clearTimer} = value
+	<Toast key={i} type={type}>
+		<div className="h4">{msg}</div>
+		<div onClick={() => clearTimer()}>button</div>
+	</Toast>
+))}
+```
 ### [데이터 변화에 따라 렌더링할 떄 깜빡이는 현상(데이터 간의 조작 시간차이) 없애기]
 ```
 A라는 데이터를 이용하여 B라는 데이터를 만든다고 하자.
@@ -708,6 +743,34 @@ function* deleteNotice(action) {
 ### [변수명 짓기](https://www.curioustore.com/)
 
 # 개발 방법론
+
+### [ socket 과 같이 구독(?) 서비스로 이벤트 제어하기 - toastify.js 를 참고](https://github.com/fkhadra/react-toastify) 
+```javascript
+const eventManager = {
+	list: new Map(),
+
+	on(event, callback) {
+		this.list.has(event) || this.list.set(event, []);
+		this.list.get(event).push(callback);
+		return this;
+	},
+	off(event) {
+		this.list.delete(event);
+		return this;
+	},
+	emit(event, ...args) {
+		this.list.has(event) &&
+			this.list.get(event).forEach((callback) =>
+				setTimeout(() => {
+					callback(...args);
+				}, 0)
+			);
+	}
+};
+
+export default eventManager;
+
+```
 ### DB사용을 최소한으로
 ```javascript
 현재 Market을 수정하는 작업을 하고 있다.
@@ -765,4 +828,73 @@ key: prCode, value: token 인 객체 만들기
 ### time traverse 구현
 ```javascript
 log 만들기
+```
+### setTimeout으로 toast 구현
+```javascript
+toast를 구현하고 싶었다.
+queue를 사용하면 간단하게 해결할 수 있을 것 같았다.
+그러나 문제가 생겼다.
+setTimeout 을 통해 toast의 제한 시간을 걸어두었는데, 
+걸어두는 시점에서의 queue의 상태와
+제한 시간 이후의 시점에서의 queue의 상태가 다르다는 것이다.
+
+그 이유는 setTimeout으로 특정 함수를 실행시키면, closure가 형성되어 그 시점의
+정보를 기억하기 때문이다.
+
+const timer = setTimeout(() => {
+	popToastExcuteQueue(id);
+}, 2000);
+
+const popToastExcuteQueue = (id) => {
+	const nextToastExcuteQueue = Object.assign({}, toastExcuteQueue);
+	delete nextToastExcuteQueue[id];
+	setToastExcuteQueue(nextToastExcuteQueue);
+};
+
+예를 들어 2초가 지나기 전에 3번의 toast를 호출했다고 치자.
+처음 2초가 지나면 Object.assign({}, toastExcuteQueue) 가 실행될 때의
+toastExcuteQueue 는 처음 실행한 toast만 가지고 있다.
+
+
+const popToastExcuteQueue = (id) => {
+		setTargetId(id);
+};
+
+useEffect(
+	() => {
+		if (targetId === null) return;
+		const nextToastExcuteQueue = Object.assign({}, toastExcuteQueue);
+		delete nextToastExcuteQueue[targetId];
+		setToastExcuteQueue(nextToastExcuteQueue);
+	},
+	[ targetId ]
+);
+이렇게 직접 스코프에 속하지 않도록 코드를 구성했다.
+
+
+
+```
+
+
+# server
+## nginx
+### [ssl 인증서 설치/적용 가이드](https://www.securesign.kr/guides/NGINX-SSL-Certificate-Install)
+```
+
+```
+
+## aws
+### [DB에 이모지 넣기]()
+```javascript
+이모지는 4바이트
+db의 기본 셋팅은 라틴1? 어쩌고
+
+global.connection = mysql.createConnection({
+	host     : “qfora-design.cv4ilmlsunnd.ap-northeast-2.rds.amazonaws.com”,
+	user     : “qfora”,
+	password : “qlxm!skfn#“,
+	port     : 3306,
+	database : “dexhi”,
+	charset  : ‘utf8mb4’
+});
 ```
