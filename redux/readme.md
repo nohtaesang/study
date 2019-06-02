@@ -13,3 +13,6 @@ export default rootReducer;
 
 ```
 #### [reselector 모듈 - 이전 상태를 캐시하고 있다가 새로운 상태가 들어오면 변경 여부를 확인하여 변경이 있을때만 하위 컴포넌트로 상태를 전파하는 문지기 역할](https://github.com/reduxjs/reselect)
+
+
+#### [redux 분석하기](https://meetup.toast.com/posts/111)

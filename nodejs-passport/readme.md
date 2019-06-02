@@ -1,0 +1,1 @@
+#### [자격 확인 영상 - 생활 코딩](https://opentutorials.org/course/3402/21877)

@@ -48,3 +48,6 @@ channel은 push동작을 pull 동작으로 바꾸는 것을 일반화 한 방법
 ```
 #### [react redux-saga example app ](https://medium.com/@lavitr01051977/make-your-first-call-to-api-using-redux-saga-15aa995df5b6)
 #### [yield all() - promise.all() 처럼 동시에 수행하기](https://github.com/redux-saga/redux-saga/blob/master/docs/advanced/RunningTasksInParallel.md)
+
+
+#### [thunk에서 saga 로](https://github.com/reactkr/learn-react-in-korean/blob/master/translated/deal-with-async-process-by-redux-saga.md)
