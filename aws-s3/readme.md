@@ -13,6 +13,8 @@ s3.listObjectsV2(
 		
 	}
 );
+
+가져오는 순서는 최신순이 아닌 알파벳 순서이다
 ```
 #### [s3 파일 관리를 위한 aws-sdk 활용법](https://mygumi.tistory.com/320)
 ```
@@ -32,3 +34,6 @@ aws_secret_access_key= [secret_key]
 ```
 #### [s3 란](https://aws.amazon.com/ko/s3/faqs/#Durability_.26_Data_Protection)
 #### [aws toolkit for visual studio code 설치하기](https://docs.aws.amazon.com/ko_kr/toolkit-for-vscode/latest/userguide/setup-toolkit.html)
+
+#### [s3에서 객체 지우기 - restful api](https://stackoverflow.com/questions/27753411/aws-s3-delete-object-using-javascript)
+

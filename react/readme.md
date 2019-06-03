@@ -119,3 +119,9 @@ const renderAlert = (obj, index, spliceAlertBox, sec) => {
 ```
 
 #### [react-infinite-scroller](https://github.com/CassetteRocks/react-infinite-scroller/blob/master/src/InfiniteScroll.js)
+
+
+#### [A component is changing an uncontrolled input of type text to be controlled]
+```
+input 의 value에 undefined가 들어가면 발생하는 오류!
+```
