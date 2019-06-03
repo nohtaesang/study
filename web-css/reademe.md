@@ -77,8 +77,13 @@ transform-origin: top;
 
 문제는 자식의 크기도 함께 축소된다는 것이다.
 ```
-####[ 스크롤 영향 안받기 - overflow:overay ]()
+#### [ 스크롤 영향 안받기 - overflow:overay ]()
 ```
 scroll의 영향을 안받도록 설정한다.
 (scroll 까지 width로 계산함)
+```
+
+#### [img 비율 유지](https://webdir.tistory.com/487)
+```css
+img { max-width: 100%; height: auto; }
 ```
