@@ -87,3 +87,12 @@ scroll의 영향을 안받도록 설정한다.
 ```css
 img { max-width: 100%; height: auto; }
 ```
+
+#### [box-sizing: border-box 의 중요성](https://endorphin0710.tistory.com/75)
+```css
+width가 고정되어있을 때, padding을 주게되면
+padding 값은 width에 포함되지 않는다.
+이렇게 되면 원하는 길이보다 컨텐츠가 길게 나올 수 있다.
+box-sizing:border-box로 해결할 수 있다.
+```
+
