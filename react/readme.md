@@ -125,3 +125,101 @@ const renderAlert = (obj, index, spliceAlertBox, sec) => {
 ```
 input 의 value에 undefined가 들어가면 발생하는 오류!
 ```
+
+
+#### [createPortal](https://codeburst.io/reacts-portals-in-3-minutes-9b2efb74e9a9)
+```javascript
+DOM Hierarchy 외부에 컴포넌트를 렌더링할 수 있게 도와준다.
+
+const Modal = ({children, onClose, open})=>
+	open
+		? ReactDOM.createPortal(
+			<div className='modal'>
+				<div className='modal-close' onClick={onClise}>X</div>
+				{children}
+			</div>,
+			document.body
+		)
+		: null
+
+```
+#### [createPorta](https://velog.io/@velopert/react-portals)
+```javascript
+
+
+
+
+DOM 계층구조 시스템에 종속되지 않으면서 컴포넌트를 렌더링할 수 있다~
+1. 스타일을 상속 받는 불편함 해결
+2. z-index 관리에 유용
+3. ui state 값들을 상태 관리 라이브러리를 이용하지 않아도 관리할 수 있다.
+```
+
+
+#### [코드 스플리팅 code spliting](https://velog.io/@velopert/react-code-splitting)
+```javascript
+코드 스플리팅을 하는 이유
+1. 프로젝트 규모가 커질 수록 자바스크립트 파일 용량이 커진다.
+이로 인해 인터넷 로딩이 느려질 수 있다.
+지금 당장 필요한 코드가 아니라면 따로 분리시켜서, 나중에 불러오는 것이다.
+
+
+
+handleClick = () => {
+    import('./notify').then(({ default: notify }) => {
+      notify();
+    });
+};
+notify 함수는 handleClick이 실행하기 전 까지는 필요하지 않기 때문이다.
+
+이 함수는 모듈을 비동기적으로 CommonJS 형태로 불러오니, 따로 default 를 명시해주어야 한다.
+위에서 사용한 코드는 default 를 notify로 부르겠다, 라고 설정한 것이다.
+
+import 를 함수로 사용하면 Promise를 반환한다.
+import 를 함수로 사용하면 웹팩이 알아서 코드를 분리하여 따로 저장을 하고, import가 호출될 때 불러와서 사용할 수 있게 해준다.
+
+
+
+컴포넌트를 코드스플리팅 해보기
+
+import React, { Component } from 'react';
+
+class App extends Component {
+  state = {
+    SplitMe: null
+  };
+  handleClick = () => {
+    import('./SplitMe').then(({ default: SplitMe }) => {
+      this.setState({
+        SplitMe
+      });
+    });
+  };
+  render() {
+    const { SplitMe } = this.state;
+    return (
+      <div>
+        <button onClick={this.handleClick}>Click Me</button>
+        {SplitMe && <SplitMe />}
+      </div>
+    );
+  }
+}
+
+export default App;
+
+handleClick이 호출되면, 비동기적으로 SplitMe를 불러와 state에 담는다.
+그리고 render 함수에서는 state안에 있는 SplitMe가 유효할때만 렌더링을 해준다.
+```
+
+
+#### [create-react-app v2 에서 바뀐점](https://velog.io/@velopert/create-react-app-v2)
+```javascript
+sass를 바로 사용할 수 있다.
+
+$ yarn add node-sass
+후
+import './MyComponent.scss';
+
+
+```
