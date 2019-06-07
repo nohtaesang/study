@@ -223,3 +223,37 @@ import './MyComponent.scss';
 
 
 ```
+#### [image 업로드와 미리보기 - upload, preivew](https://a1010100z.tistory.com/entry/Spring-Spring-Ajax-%ED%8C%8C%EC%9D%BC-%EC%A0%84%EC%86%A1-Javascript-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%AF%B8%EB%A6%AC%EB%B3%B4%EA%B8%B0)
+```javascript
+const handleUpload = (e) => {
+		e.preventDefault();
+
+		const data = new FormData();
+		const file = inputRef.current.files[0];
+		const key = `popupImages/${file.name}`;
+
+		data.append('file', file);
+		data.append('filename', file.name);
+
+  // const url = `${databaseUrl}/popup/image/upload`;
+	// const headers = { headers: { 'Content-Type': 'multipart/form-date' } };
+	// try {
+	// 	const res = yield axios.post(url, data, headers);
+	// 	yield put({ type: 'UPLOAD_POPUP_IMAGE_SUCCESS', payload: res.data });
+	// } catch (err) {
+	// 	console.log(err);
+	// } 로 사용 가능
+
+
+
+
+		const reader = new FileReader();
+		reader.readAsDataURL(file);
+
+		reader.onload = (e) => {
+			const tempImage = new Image();
+			tempImage.src = reader.result;
+		};
+    // <img src={tempImage.src}/> 로 사용 가능
+	};
+```
