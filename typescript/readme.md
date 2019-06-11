@@ -1,3 +1,9 @@
+#### tutorial
+```
+1. typescript handbook - https://typescript-kr.github.io/
+2. ts for jsdev - https://ahnheejong.gitbook.io/ts-for-jsdev/
+```
+
 #### [5분안에 보는 타입스크립트](https://typescript-kr.github.io/pages/tutorials/TypeScript%20in%205%20minutes.html)
 ```typescript
 Type annotations
@@ -408,3 +414,166 @@ function buildName(firstName: string, ...restOfName: string[]) {
 
 let employeeName = buildName("Joseph", "Samuel", "Lucas", "MacKinzie");
 ```
+
+
+#### [제네릭 (generic)]()
+```typescript
+function identity(arg: number): number {
+    return arg;
+}
+
+function identity(arg: any): any {
+    return arg;
+}
+any를 사용하는 것은 함수가 arg에 대한 모든 타입을 전달 받을 수 있게되지만 
+실제로 함수가 반환할 떄 그 타입이 무엇이었는지에 대한 정보를 잃어버리게 된다.
+
+타입변수(type variable)를 사용하여 어떤 타입이 반환될 것인지를 나타낼 수 있다. 
+function identity<T>(arg: T): T {
+    return arg;
+}
+identity 함수에 타입변수 T를 추가한 모습이다.
+이 T는 함수 사용자가 제공한 타입을 캡처하여 나중에 해당 정보를 사용할 수 있도록 한다.
+이를 제네릭 함수라고 한다.
+
+제네릭함수를 호출하는 방법은 두가지가 있다.
+1. 타입 인수를 포함한 모든 인수를 함수에 전달하는 것
+let output = identity<string>("myString");  // 반환 타입은 'string' 입니다.
+T를 string으로 명시했으며 인수에 () 대신 <>를 사용했다.
+
+2. 타입 인수 추론(type argument inference)을 사용한다(더 일반적인 방법)
+let output = identity("myString");  // 반환 타입은 'string' 입니다.
+<> 안에 명시적으로 타입을 전달할 필요가 없다.
+컴파일러는 그저 "myString" 의 값을 보고 T를 그 타입으로 설정한다.
+컴파일러가 타입을 추론하지 못하면 1번의 예제처럼 타입 인수를 명시적으로 전달해야 할 수도 있다.
+
+
+제네릭 함수에서 약간의 문제가 있다.
+function loggingIdentity<T>(arg: T): T {
+    console.log(arg.length);  // 오류 : T는 .length 메소드를 가지고 있지 않습니다.
+    return arg;
+}
+컴파일러는 arg의 .length 멤버를 사용하고 있다는 오류를 주지만 arg 모듈에는 이 멤버가 없다고 할 수는 없다.
+실제로 이 함수가 T 대신 T 배열을 처리한다고 가정한다면 아래와 같이 해결할 수 있다.
+
+function loggingIdentity<T>(arg: T[]): T[] {
+    console.log(arg.length);  // Array는 .length 멤버가 있습니다. 오류 없음.
+    return arg;
+}
+
+아래처럼 해결도 가능하다.
+interface Lengthwise {
+    length: number;
+}
+
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+    console.log(arg.length);  // 이제 .length 프로퍼티가 있으므로 더이상 오류가 없습니다.
+    return arg;
+}
+
+대신 모든 필수 프로퍼티가 있는 타입의 값을 전달해야 한다.
+loggingIdentity({length: 10, value: 3});
+```
+
+
+#### [제네릭 제약조건에서 타입 매개변수 사용 - using type parameters in generi constaraints]
+```typescript
+다른 타입 매개 변수에 의해 제한되는 타입 매개 변수를 선언할 수 있다.
+예를 뜰어 여기서는 일므을 가진 객체의 프로퍼티를 가져오려고 한다.
+실수로 obj에 존재하지 않는 프로퍼티를 잡아내지 않도록 하고자 한다.
+그래서 두가지 타입 사이에 제약조건을 적용한 것이 아래의 코드다.
+function getProperty<T, K extends keyof T>(obj: T, key: K) {
+    return obj[key];
+}
+
+let x = { a: 1, b: 2, c: 3, d: 4 };
+
+getProperty(x, "a"); // 오류 없음
+getProperty(x, "m"); // 오류 : 타입 'm'의 인수를 'a' | 'b' | 'c' | 'd' 에 할당 할 수 없습니다.
+```
+
+
+#### [열거형](https://typescript-kr.github.io/pages/Enums.html)
+```typescript
+열거형을 사용하면 이름이 있는 상수들을 정의할 수 있다.
+열거형의 사용은 문서의 의도나 명확한 사례들을 쉽게 만들 수 있다.
+
+1.숫자 열거형
+enum Direction {
+    Up = 1,
+    Down,
+    Left,
+    Right,
+}
+Down 부터 2, 3, 4가 적용된다.
+
+2. 문자 열거형
+문자 열거형에서 각 멤버는 모두 초기화가 되어야 한다.
+enum Direction {
+    Up = "UP",
+    Down = "DOWN",
+    Left = "LEFT",
+    Right = "RIGHT",
+}
+문자 열거형은 자동 증가 동작을 하지 않지만 직렬화 하는 이점이 있다.
+문자 열거형을 사용하면 열거형 멤버 자체의 이름과 독립적으로 코드가 실행될 때 의미있고 읽기 쉬운 값을 제공한다.
+ㅁㄴ
+```
+
+
+#### [유니온 타입](https://ahnheejong.gitbook.io/ts-for-jsdev/03-basic-grammar/union-type)
+```typescript
+아래의 경우는 인자에 따라 결과 값이 달라진다.
+function square(value: number, returnString: boolean = false): ??? {
+  const squared = value * value;
+  if (returnString) {
+    return squared.toString();
+  }
+  return squared;
+}
+
+오버로딩으로 해결할 수 있지만, 이는 바람직하지 않다.
+아래와 같이 유니온 타입으로 해결할 수 있다.
+function square(value: number, returnString: boolean = false): string | number {
+  /* 본문 동일 */
+}
+const stringOrNumber: string | number = square(randomNumber, randomBoolean);
+유니온 타입은 파이프 기호(|)로 이어서 표현한다.
+
+타입 별칭 문법을 사용해 유니온 타입에 이름을 붙일 수 있다.
+type SquaredType = string | number;
+function square(value: number, returnOnString: boolean = false): SquaredType {
+  /* 본문 동일 */
+}
+
+
+
+```
+
+
+#### [인터섹션 타입](https://ahnheejong.gitbook.io/ts-for-jsdev/03-basic-grammar/intersection-type)
+```typescript
+이미 존재하는 여러 타입을 모두 만족하는 타입을 표현하기 위한 수단이다.
+
+type Programmer = { favoriteLanguage: string };
+const programmer: Programmer = { favoriteLanguage: 'TypeScript' };
+
+type BeerLover = { favoriteBeer: string };
+const beerLover: BeerLover = { favoriteBeer: 'Imperial Stout' };
+이렇게 프로그래머와 맥주 선호에 관한 타입이 있다.
+이 두개를 함께 나타내기 위해서는
+
+type BeerLovingProgrammer = { favoriteLanguage: string; favoriteBeer: string; };
+const AhnHeejong: BeerLovingProgrammer = { 
+  favoriteLanguage: 'TypeScript',
+  favoriteBeer: 'Imperial Stout',
+};
+위와 같은 방법이 있을수 있지만, 유지보수 차원에서 좋지 않다.
+
+이럴때 앰퍼샌드(&) 기호를 통해 인터섹션 타입을 사용하면 된다.
+type BeerLovingProgrammer = Programmar & BeerLover;
+
+단 모두를 만족해야한다.
+```
+
+#### [typescript 와 redux - 쉬운 예제 ](https://velog.io/@yesdoing/TypeScript-with-React-Redux-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-k5jsis62ah)

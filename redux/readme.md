@@ -16,3 +16,5 @@ export default rootReducer;
 
 
 #### [redux 분석하기](https://meetup.toast.com/posts/111)
+
+#### [redux 와 hooks](https://react-redux.js.org/next/api/hooks)

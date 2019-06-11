@@ -8,3 +8,5 @@
 불 필요한 렌더링을 방지하기 위함
 
 ```
+
+#### [redux와 hooks](https://react-redux.js.org/next/api/hooks)
