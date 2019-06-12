@@ -587,3 +587,48 @@ type은 새로운 이름을 만들지 않는다.
 2. type은 extend되거나 implement 될 수 없다.
 소프트웨어의 이상적인 속성이 확장에 용이하다는 것이기 때문에 가능하다면 언제나 type 보다 interface를 이용해야 한다.
 ```
+
+
+#### [typescript + redux-saga + immutable + reselect project](https://github.com/nearform/react-redux-typescript-saga-immutable)
+
+
+#### [typescrit + nextjs](https://medium.com/@miiny/setup-a-server-rendered-reactjs-application-with-next-js-typescript-sass-7cd3e7e79706)
+
+#### [typescrit + nextjs - starter kit](https://github.com/deptno/next.js-typescript-starter-kit)
+
+#### [typescript + nextjs - next-typescript plugin](https://github.com/zeit/next-plugins/tree/master/packages/next-typescript)
+```javascript
+1. npm install --save @zeit/next-typescript
+
+2. Create a next.config.js in your project
+// next.config.js
+const withTypescript = require('@zeit/next-typescript')
+module.exports = withTypescript({
+  /* config options here */
+})
+
+3. Create a .babelrc in your project
+{
+  "presets": [
+    "next/babel",
+    "@zeit/next-typescript/babel"
+  ]
+}
+
+4. Create a tsconfig.json in your project
+{
+    "compilerOptions": {
+      "module": "esnext",
+      "target": "esnext",
+      "jsx": "preserve",
+      "sourceMap": false,
+      "moduleResolution": "node"
+    },
+    "exclude": [
+      "out",
+      ".next"
+    ]
+}
+
+
+```
