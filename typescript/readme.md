@@ -577,3 +577,13 @@ type BeerLovingProgrammer = Programmar & BeerLover;
 ```
 
 #### [typescript 와 redux - 쉬운 예제 ](https://velog.io/@yesdoing/TypeScript-with-React-Redux-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-k5jsis62ah)
+
+
+#### [type과 interface의 차이](https://medium.com/@alexsung/typescript-type%EA%B3%BC-interface-%EC%B0%A8%EC%9D%B4-86666e3e90c)
+```
+1. interface는 여러곳에서 사용되는 이름을 만든다는 점이 다르다.
+type은 새로운 이름을 만들지 않는다.
+
+2. type은 extend되거나 implement 될 수 없다.
+소프트웨어의 이상적인 속성이 확장에 용이하다는 것이기 때문에 가능하다면 언제나 type 보다 interface를 이용해야 한다.
+```
