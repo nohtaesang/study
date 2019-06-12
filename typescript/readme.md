@@ -629,6 +629,4 @@ module.exports = withTypescript({
       ".next"
     ]
 }
-
-
 ```
