@@ -630,3 +630,15 @@ module.exports = withTypescript({
     ]
 }
 ```
+
+
+#### 부모 컴포넌트로부터 함수를 props로 받아올 경우
+```typescript
+type OwnProps = {
+	user: UserType | null;
+	login(email: string, password: string): LoginType;
+	logout(): LogoutType;
+};
+
+이런식으로 선언해야한다.
+```

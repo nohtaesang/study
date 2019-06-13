@@ -9,3 +9,45 @@
 https://next-router-issue-wjnmzzmmft.now.sh/ 배포된 곳에서 테스트하면 문제가 생기지 않지만
 https://github.com/malimccalla/next-routing-issue 로컬로 받아와서 테스트하면 1~2분 뒤 문제가 발생함
 ```
+
+
+#### [plugin 여러개 동시에 사용하기](https://github.com/zeit/next-plugins/issues/34)
+```javascript
+module.exports = withCSS(withTypescript(withSass({
+ cssModules: true,
+ webpack: (config) => {
+    return config
+ }
+})))
+```
+
+#### [nextjs 에서 css 파일 사용하기](https://github.com/zeit/next-plugins/tree/master/packages/next-css)
+```javascript
+yarn add @zeit/next-css
+
+// next.config.js
+const withCSS = require('@zeit/next-css')
+module.exports = withCSS({
+  /* config options here */
+})
+```
+
+
+#### [styled-components 사용시 Warning: Prop `className` did not match. 오류가 나올 경우](https://github.com/zeit/next.js/issues/4068)
+```javascript
+babel을 수정해준다.
+
+module.exports = {
+	presets: [ 'next/babel', '@zeit/next-typescript/babel' ],
+	plugins: [
+		[
+			'styled-components',
+			{
+				ssr: true,
+				displayName: true
+			}
+		]
+	]
+};
+
+```
