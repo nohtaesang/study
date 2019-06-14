@@ -10,3 +10,5 @@
 ```
 
 #### [redux와 hooks](https://react-redux.js.org/next/api/hooks)
+
+#### [useSelector, useDispatch로 redux 값 가져오기](https://react-redux.js.org/next/api/hooks)

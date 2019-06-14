@@ -257,3 +257,7 @@ const handleUpload = (e) => {
     // <img src={tempImage.src}/> 로 사용 가능
 	};
 ```
+
+
+#### [babel을 이용해 절대경로 설정하기](https://github.com/tleunen/babel-plugin-module-resolver)
+

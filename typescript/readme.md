@@ -642,3 +642,5 @@ type OwnProps = {
 
 이런식으로 선언해야한다.
 ```
+
+#### [함수형 컴포넌트에서 getInitialProps 사용하는법] (https://stackoverflow.com/questions/49929268/using-getinitialprops-in-next-js-with-typescript)

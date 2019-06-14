@@ -51,3 +51,14 @@ module.exports = {
 };
 
 ```
+
+
+#### [ styled-components slow first render - 처음 렌더시 스타일이 반영 안되는 문제](https://github.com/styled-components/styled-components/issues/2171)
+```
+방법을 찾지 못해서 scss 를 사용하기로...
+```
+
+#### [scss 사용하기](https://github.com/zeit/next-plugins/tree/master/packages/next-sass)
+```
+yarn add @zeit/next-sass node-sass
+```
