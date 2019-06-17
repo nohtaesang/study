@@ -644,3 +644,28 @@ type OwnProps = {
 ```
 
 #### [함수형 컴포넌트에서 getInitialProps 사용하는법] (https://stackoverflow.com/questions/49929268/using-getinitialprops-in-next-js-with-typescript)
+
+#### [useState의 type 지정하기](https://www.carlrippon.com/typed-usestate-with-typescript/)
+```typescript
+	const [ curQuestionList, setCurQuestionList ] = useState<QuestionType[]>([]);
+```
+
+
+#### [key - value의 map object type 지정하기]
+```typescript
+export type QuestionType = {
+	id: number;
+	name: string;
+	text: string;
+	selectedIndexList: number[];
+};
+
+export type QuestionMap = {
+	[id: number]: QuestionType;
+};
+
+export type QuestionStateType = {
+	questionList: QuestionMap;
+};
+
+```
