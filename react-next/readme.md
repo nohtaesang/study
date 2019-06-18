@@ -62,3 +62,35 @@ module.exports = {
 ```
 yarn add @zeit/next-sass node-sass
 ```
+
+#### [ nextjs 절대경로 설정하기 - @ 사용]
+```javascript 
+// .babelrc
+{
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      ["module-resolver", {
+        "root": ["./"],
+        "alias":{
+          "@layout":"./src/js/components/layout/"
+        }
+      }
+    ]
+	]
+}
+
+// jsconfig.json
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "paths": {
+        "@layout/*":[".src/js/components/layout/*"],
+      }
+    }
+}
+
+```
+
+#### [next 에 component-styles 얹기](https://dev.to/aprietof/nextjs--styled-components-the-really-simple-guide----101c)

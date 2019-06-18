@@ -669,3 +669,22 @@ export type QuestionStateType = {
 };
 
 ```
+
+#### [typescript에서 useref 사용하기 - strict 일때 생기는 문제](https://fettblog.eu/typescript-react/hooks/)
+```typescript
+const barRef = useRef<HTMLInputElement>(null);
+
+const onChangeBar = () => {
+	if (barRef.current) {
+		console.dir(barRef.current.offsetLeft);
+	}
+};
+
+```
+
+#### [typescript에서 window.event 사용하기]()
+```typescript
+const windowEvent = window.event;
+
+console.log((windowEvent as MouseEvent).clientX);
+```
