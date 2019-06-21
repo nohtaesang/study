@@ -259,5 +259,30 @@ const handleUpload = (e) => {
 ```
 
 
-#### [babel을 이용해 절대경로 설정하기](https://github.com/tleunen/babel-plugin-module-resolver)
+#### [babel을 이용해 절대경로 설정하기 - absolute path](https://github.com/tleunen/babel-plugin-module-resolver)
+```javascript
+// babelrc
+{
+    "plugins": [
+        ["module-resolver", {
+            "root": ["./src"],
+            "alias": {
+              "test": "./test",
+              "underscore": "lodash"
+            }
+          }]
+    ]
+}
 
+// jsconfig.json
+{
+    "compilerOptions": {
+            "baseUrl": ".",
+            "paths": {
+            "*": ["src/*"],
+            "test/*": ["test/*"],
+            "underscore": ["lodash"]
+        }
+    }
+}
+```
