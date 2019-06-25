@@ -688,3 +688,31 @@ const windowEvent = window.event;
 
 console.log((windowEvent as MouseEvent).clientX);
 ```
+
+#### [객체 깊은 복사하기 - clone ](https://stackoverflow.com/questions/28150967/typescript-cloning-object)
+```javascript
+public clone(): any {
+    var cloneObj = new (<any>this.constructor());
+    for (var attribut in this) {
+        if (typeof this[attribut] === "object") {
+            cloneObj[attribut] = this.clone();
+        } else {
+            cloneObj[attribut] = this[attribut];
+        }
+    }
+    return cloneObj;
+}
+```
+
+#### [화살표 함수로 제네릭 사용하기 - arrow function with generic ](https://stackoverflow.com/questions/32308370/what-is-the-syntax-for-typescript-arrow-functions-with-generics)
+```typescript
+Something like the following works fine:
+
+function foo<T>(x: T): T { return x; }
+However using an arrow generic function will not:
+
+const foo = <T>(x: T) => x; // ERROR : unclosed `T` tag
+Workaround: Use extends on the generic parameter to hint the compiler that it's a generic, e.g.:
+
+const foo = <T extends {}>(x: T) => x
+```
